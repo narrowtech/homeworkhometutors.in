@@ -1,0 +1,120 @@
+$primary-blue: #1B1344;
+$secondary-blue: #0061B2;
+$footer-color: #093F74;
+$primary-grey: #707070ce;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: $primary-blue;
+}
+
+h2 {
+    font-size: 2rem;
+    color: $primary-blue;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $primary-grey;
+}
+h4 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $primary-blue;
+}
+
+p {
+    font-size: 1.4rem;
+    color: $primary-grey;
+}
+
+a {
+    position: relative;
+    font-size: 1.45rem;
+    text-decoration: none;
+    color: #919191;
+}
+
+a.active {
+    color: $secondary-blue;
+    font-weight: 600;
+    &::after {
+        left: 45%;
+        z-index: 100;
+        bottom: -60%;
+        position: absolute;
+        content: "";
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: $secondary-blue;
+    }
+}
+
+.step-cards  {
+    color: $primary-blue;
+    font-weight: 600;
+}
+
+.common-button {
+    background-color: $secondary-blue;
+    color: #ffffff;
+    padding: 1.5rem 4rem;
+    border-radius: 0.5rem;
+}
+
+.home-section {
+    min-height: 75vh;
+}
+.contacts-section  {
+    min-height: 100vh;
+}
+.about-section, .services-section, .testimonials-section{
+    min-height: 100vh;
+    padding: 0 10%;
+    @media screen and (max-width: 974px) {
+        padding: 0 8%;
+    }
+}
+.teams-section {
+    padding: 7rem 10%;
+    @media screen and (max-width: 974px) {
+        padding: 7rem 8%;
+    }
+}
+
+@import "home";
+@import "about";
+@import "services";
+@import "testimonials";
+@import "teams";
+@import "contacts";
+
+footer {
+    background-color: $footer-color;
+    width: 100%;
+    min-height: 15vh;
+}
+
+@media screen and (max-width: 768px) {
+    .common-button {
+        padding: 1rem 3rem;
+    }
+}
