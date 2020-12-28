@@ -5,7 +5,9 @@
     background: url('../images/about_bg.svg') no-repeat;
     background-size: 70%;
     min-height: 120vh !important;
-    h3 {
+    .steps-details {
+        line-height: 3rem;
+        word-spacing: 0.1rem;
         margin: 2.5rem 0rem 5rem 0rem;
         max-width: 44.5rem;
     }

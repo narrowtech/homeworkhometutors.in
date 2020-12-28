@@ -331,7 +331,9 @@ nav ul li {
   min-height: 120vh !important;
 }
 
-.about-section h3 {
+.about-section .steps-details {
+  line-height: 3rem;
+  word-spacing: 0.1rem;
   margin: 2.5rem 0rem 5rem 0rem;
   max-width: 44.5rem;
 }
@@ -1141,6 +1143,13 @@ nav ul li {
   }
 }
 
+@media screen and (max-width: 414px) {
+  .member-card {
+    width: 30rem !important;
+    height: 48rem;
+  }
+}
+
 .contacts-section {
   width: 90%;
   margin: 0rem 0rem 0rem auto;
@@ -1218,6 +1227,7 @@ nav ul li {
         grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0rem;
     grid-row-gap: 2rem;
+    margin: 0rem auto !important;
   }
   .contact-left-content {
     -ms-grid-row: 1;
@@ -1240,6 +1250,29 @@ nav ul li {
   }
   .right-form-contain .contact-form {
     margin: 3rem 0;
+  }
+}
+
+@media screen and (max-width: 602px) {
+  .contacts-section {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-form {
+    width: 32rem !important;
+    height: 60rem;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .contacts-section {
+    width: 96%;
+  }
+  .contact-form {
+    width: 27rem !important;
+    height: 60rem;
   }
 }
 

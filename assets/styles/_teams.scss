@@ -57,3 +57,10 @@
         }
     }
 }
+
+@media screen and (max-width: 414px) {
+    .member-card {
+        width: 30rem !important;
+        height: 48rem;
+    }
+}
