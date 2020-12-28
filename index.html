@@ -130,43 +130,85 @@
     
         <h1>Grab these exciting offer <br /> and apply now</h1>
     
-        <div class="courses">
-            <div class="single-course course-a"> 
-                <div class="course-picture"></div> 
-                <div class="course-content">
-                    <h4>English</h4>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
-                    </p>
-                </div> 
+        <div class="service-swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="courses">
+                            <div class="single-course course-a"> 
+                                <div class="course-picture"></div> 
+                                <div class="course-content">
+                                    <h4>English</h4>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    </p>
+                                </div> 
+                            </div>
+                            <div class="single-course course-b"> 
+                                <div class="course-picture"></div> 
+                                <div class="course-content">
+                                    <h4>English</h4>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    </p>
+                                </div> 
+                            </div>
+                            <div class="single-course course-c"> 
+                                <div class="course-picture"></div> 
+                                <div class="course-content">
+                                    <h4>English</h4>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    </p>
+                                </div> 
+                            </div>
+                            <div class="single-course course-d"> 
+                                <div class="course-picture"></div> 
+                                <div class="course-content">
+                                    <h4>English</h4>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    </p>
+                                </div> 
+                            </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="courses">
+                        <div class="single-course course-a"> 
+                            <div class="course-picture"></div> 
+                            <div class="course-content">
+                                <h4>English</h4>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="single-course course-b"> 
+                            <div class="course-picture"></div> 
+                            <div class="course-content">
+                                <h4>English</h4>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="single-course course-c"> 
+                            <div class="course-picture"></div> 
+                            <div class="course-content">
+                                <h4>English</h4>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                </p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="single-course course-b"> 
-                <div class="course-picture"></div> 
-                <div class="course-content">
-                    <h4>English</h4>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
-                    </p>
-                </div> 
-            </div>
-            <div class="single-course course-c"> 
-                <div class="course-picture"></div> 
-                <div class="course-content">
-                    <h4>English</h4>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
-                    </p>
-                </div> 
-            </div>
-            <div class="single-course course-d"> 
-                <div class="course-picture"></div> 
-                <div class="course-content">
-                    <h4>English</h4>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
-                    </p>
-                </div> 
-            </div>
+            <!-- Add Pagination -->
+            <div class="service-swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
         </div>
 
         <a class="common-button for-more-button" href="#">Browse All</a>
@@ -320,6 +362,19 @@
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
+        },
+        });
+
+        var swiper = new Swiper('.service-swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            el: '.service-swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.service-swiper-button-next',
+            prevEl: '.service-swiper-button-prev',
         },
         });
         </script>
