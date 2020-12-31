@@ -9,11 +9,124 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <title>Home Work Home Tutors</title>
 </head>
 <body>
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="modal">
+        <button class="modal-close-btn" id="close-btn">
+            <img src="./assets/images/close-icon.png" alt="close">
+        </button>
+
+        <div class="form-header">
+            <h3>Fill Form</h3>
+        </div>
+        
+        <ul class="nav nav-tabs">
+			<li class="active"><a href="#tab-1">Students</a></li>
+			<li class=""><a href="#tab-2">Teachers</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="tab-1" class="tab-pane active">
+
+                <form action="">
+
+                    <input class="form-field" type="text" name="name" placeholder="Full Name" />
+
+                    <input class="form-field" type="text" name="email" placeholder="Email Address" />
+    
+                    <input class="form-field" type="number" name="phone" placeholder="Phone Number" />
+
+                    <select class="form-field" name="class" id="">
+                        <option value="null" selected="selected" disabled>Select Class</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+
+                    <select class="form-field" name="district" id="">
+                        <option value="null" selected="selected" disabled>Select District</option>
+                        <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="kollam">Kollam</option>
+                        <option value="pathanamthitta">Pathanamthitta</option>
+                        <option value="alappuzha">Alappuzha</option>
+                        <option value="kottayam">Kottayam</option>
+                        <option value="idukki">Idukki</option>
+                        <option value="ernakulam">Ernakulam</option>
+                        <option value="thrissur">Thrissur</option>
+                        <option value="palakkad">Palakkad</option>
+                        <option value="malappuram">Malappuram</option>
+                        <option value="kozhikode">Kozhikode</option>
+                        <option value="Wayanad">Wayanad</option>
+                        <option value="Kannur">Kannur</option>
+                        <option value="Kasaragod">Kasaragod</option>
+                    </select>
+
+                    <button class="form-submit-button" type="submit"> Submit </button>
+
+                </form>
+
+			</div> 
+			<div id="tab-2" class="tab-pane">
+                
+                <form action="">
+
+                    <input class="form-field" type="text" name="name" placeholder="Full Name" />
+
+                    <input class="form-field" type="text" name="email" placeholder="Email Address" />
+    
+                    <input class="form-field" type="number" name="phone" placeholder="Phone Number" />
+
+                    <select class="form-field" name="class" id="">
+                        <option value="null" selected="selected" disabled>Qualification</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+
+                    <textarea name="address" class="form-field address-field" placeholder="Address" rows="6"></textarea>
+
+                    <div class="upload-row">
+
+                        <label class="file-upload-button" for="file-upload">
+                            Upload Your Resume
+                        </label>
+                        <p class="uploaded-file-name">
+                            
+                        </p>
+
+                    </div>
+                    <input style="display: none;" type="file" name="chooseFile" id="file-upload" class="form-field" onchange="processSelectedFile(this)" />
+
+                    <button class="form-submit-button" type="submit"> Submit </button>
+
+                </form>
+
+			</div>
+		</div>
+    </div>
     <!-- ?============================================ -->
     <!-- ?================= Nav Bar ================= -->
     <!-- ?========================================== -->
@@ -36,7 +149,7 @@
             <li> <a href="#services">Services</a> </li>
             <li> <a href="#testimonials">Testimonials</a> </li>
             <li> <a href="#contact">Contact Us</a> </li>
-            <li> <a class="common-button" href="#sign">Sign In</a> </li>
+            <li> <a class="common-button call-pop">Register</a> </li>
 
         </ul>
 
@@ -54,7 +167,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
             </h3>
     
-            <a class="common-button for-more-button" href="#">For More</a>
+            <a class="common-button for-more-button call-pop" href="#">For More</a>
         </div>
 
         <div class="home-right-content">
@@ -211,7 +324,7 @@
             <div class="swiper-button-prev"></div> -->
         </div>
 
-        <a class="common-button for-more-button" href="#">Browse All</a>
+        <a class="common-button for-more-button call-pop" href="#">Browse All</a>
 
         <img class="service-bg-img" src="./assets/images/service_ng_img.svg" alt="service">
 
@@ -249,7 +362,7 @@
                 Website <br />
             </h1>
     
-            <a class="common-button for-more-button" href="#">Browse all</a>
+            <a class="common-button for-more-button call-pop" href="#">Browse all</a>
 
         </div>
 
@@ -322,21 +435,92 @@
 
             <div class="contact-divider"></div>
         
-            <h3>
-                Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem. Suspendisse
-            </h3>
+            <h3> <i class="fas fa-map-marker-alt"></i> Malappuram, Calicut, Wayanad </h3>
+            <h3> <i class="fas fa-phone-alt"></i> 996 610 7578, 954 483 2272 </h3>
+            <h3> <i class="fab fa-instagram-square"></i> homework_hometutors </h3>
+            <h3> <i class="fas fa-envelope"></i> homeworkhometutors@gmail.com </h3>
 
         </div>
 
         <div class="right-form-contain">
 
-            <div class="contact-form"></div>
+            <div class="contact-form">
+
+                <h2>Get In Touch</h2>
+
+                <form action="">
+
+                    <input class="form-field" type="text" name="name" placeholder="Full Name" />
+
+                    <input class="form-field" type="text" name="email" placeholder="Email Address" />
+
+                    <textarea name="address" class="form-field address-field" placeholder="What's your thought ?" rows="6"></textarea>
+
+                    <button class="form-submit-button call-pop" type="button"> Sent </button>
+
+                </form>
+
+            </div>
 
         </div>
 
     </section>
 
     <footer>
+        
+        <div class="first-row">
+
+            <img class="footer-logo" src="./assets/images/logo_white.png" alt="logo">
+
+            <div class="column quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="http://">Careers</a></li>
+                    <li><a href="http://">Become a Trainer</a></li>
+                    <li><a href="http://">Give Feedback</a></li>
+                    <li><a href="http://">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div class="column features">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="http://">Best Teachers</a></li>
+                    <li><a href="http://">Adaptive Teaching</a></li>
+                    <li><a href="http://">Convenient & Sale</a></li>
+                    <li><a href="http://">LIVE & Interactive</a></li>
+                </ul>
+            </div>
+    
+            <div class="column resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="http://">Study Materials</a></li>
+                    <li><a href="http://">Question Papers</a></li>
+                    <li><a href="http://">Take Quiz</a></li>
+                    <li><a href="http://">Downloads</a></li>
+                </ul>
+            </div>
+    
+            <div class="column quick-links">
+                <h3>Top Products</h3>
+                <ul>
+                    <li><a href="http://">Foundation Course</a></li>
+                    <li><a href="http://">Spoken English</a></li>
+                    <li><a href="http://">+1 / +2 Crash Courses</a></li>
+                    <li><a href="http://">JEE / NEET Courses</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="second-row">
+
+            <p>
+                &copy; homeworkhometutors. All rights reserved. Created and maintained by &nbsp;<a href="https://narrowtech.in/">Narrowtech.in</a>
+            </p>
+
+        </div>
         
     </footer>
 

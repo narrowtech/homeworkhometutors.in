@@ -136,6 +136,7 @@ nav {
         background-color: #333333;
     }
 
+    nav {
     ul {
         z-index: 200;
         position: relative;
@@ -168,4 +169,5 @@ nav {
     ul.open {
         clip-path: circle(58rem at 110% -30%);
     }
+}
 }
