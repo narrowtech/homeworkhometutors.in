@@ -8,11 +8,11 @@ const links = document.querySelector('.nav-links li');
 const paras = document.querySelector('.single-course p');
 const fileName = document.querySelector('.uploaded-file-name');
 
-// function processSelectedFile(fileInput) {
-//     var files = fileInput.files;
+function processSelectedFile(fileInput) {
+    var files = fileInput.files;
     
-//     fileName.textContent = files[0].name;
-//   }
+    fileName.textContent = files[0].name;
+  }
 
 document.querySelectorAll('.call-pop').forEach(element => {
     element.addEventListener('click', function() {
@@ -227,34 +227,31 @@ function submitTeacher(e) {
 		address.focus(); 
 		return false; 
 	}
-	//let file = document.getElementById("file-upload").files[0];
+	let file = document.getElementById("file-upload").files[0];
 
 	document.getElementById('teacher-button').disabled = true;
 	document.getElementById('loader2').classList.remove('void');
 	document.getElementById('texter2').classList.add('void');
 
-	const Data = {
-		name: name.value,
-		email: email.value,
-		phone: phone.value,
-		qualification: qualification.value,
-		address: address.value,
-	}
+	// const Data = {
+	// 	name: name.value,
+	// 	email: email.value,
+	// 	phone: phone.value,
+	// 	qualification: qualification.value,
+	// 	address: address.value,
+	// }
 
-	//let formData = new FormData();
+	let formData = new FormData();
 
-	// formData.append("file", file);
-	// formData.append("name", name.value);
-	// formData.append("email", email.value);
-	// formData.append("phone", phone.value);
-	// formData.append("qualification", qualification.value);
-	// formData.append("address", address.value);
+	formData.append("file", file);
+	formData.append("name", name.value);
+	formData.append("email", email.value);
+	formData.append("phone", phone.value);
+	formData.append("qualification", qualification.value);
+	formData.append("address", address.value);
 
 	const Params = {
-		headers: {
-			"content-type": "application/json"
-		},
-		body: JSON.stringify(Data),
+		body: formData,
 		method: "POST"
 	}
 
@@ -277,9 +274,3 @@ function submitTeacher(e) {
 			console.log(error) 
 		})
 }
-
-// for (var i = 0; i < document.links.length; i++) {
-//     if (document.links[i].href == document.URL) {
-//         document.links[i].className = 'active';
-//     }
-// }
