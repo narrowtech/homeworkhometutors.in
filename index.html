@@ -33,7 +33,7 @@
 		<div class="tab-content">
 			<div id="tab-1" class="tab-pane active">
 
-                <form action="">
+                <form name="studForm" onsubmit="return submitStudent(event)">
 
                     <input class="form-field" type="text" name="name" placeholder="Full Name" />
 
@@ -75,14 +75,18 @@
                         <option value="Kasaragod">Kasaragod</option>
                     </select>
 
-                    <button class="form-submit-button" type="submit"> Submit </button>
+                    <button class="form-submit-button" id="student-button" type="submit"> 
+                        <div id="loader" class="loader void"></div>
+                        <p id="texter" style="color: #fff;">Submit</p>
+                    </button>
+                    
 
                 </form>
 
 			</div> 
 			<div id="tab-2" class="tab-pane">
                 
-                <form action="">
+                <form name="techForm" onsubmit="return submitTeacher(event)">
 
                     <input class="form-field" type="text" name="name" placeholder="Full Name" />
 
@@ -90,21 +94,7 @@
     
                     <input class="form-field" type="number" name="phone" placeholder="Phone Number" />
 
-                    <select class="form-field" name="class" id="">
-                        <option value="null" selected="selected" disabled>Qualification</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
+                    <input class="form-field" type="text" name="qualification" placeholder="Qualification" />
 
                     <textarea name="address" class="form-field address-field" placeholder="Address" rows="6"></textarea>
 
@@ -118,14 +108,23 @@
                         </p>
 
                     </div>
-                    <input style="display: none;" type="file" name="chooseFile" id="file-upload" class="form-field" onchange="processSelectedFile(this)" />
+                    <input style="display: none;" type="file" name="resume" id="file-upload" class="form-field" onchange="processSelectedFile(this)" />
 
-                    <button class="form-submit-button" type="submit"> Submit </button>
+                    <button class="form-submit-button" id="teacher-button" type="submit">
+                        <div id="loader2" class="loader void"></div>
+                        <p id="texter2" style="color: #fff;">Submit</p>
+                    </button>
 
                 </form>
 
 			</div>
 		</div>
+    </div>
+    <div class="toast" id="toast">
+        <h3>Form successfully sent</h3>
+        <button class="toast-close-btn" id="toast-close-btn">
+            <img src="./assets/images/close-icon.png" alt="close">
+        </button>
     </div>
     <!-- ?============================================ -->
     <!-- ?================= Nav Bar ================= -->
@@ -250,36 +249,36 @@
                             <div class="single-course course-a"> 
                                 <div class="course-picture"></div> 
                                 <div class="course-content">
-                                    <h4>English</h4>
+                                    <h4>Spoken English</h4>
                                     <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                        Learn to Speak English with confidence by our customized Course
                                     </p>
                                 </div> 
                             </div>
                             <div class="single-course course-b"> 
                                 <div class="course-picture"></div> 
                                 <div class="course-content">
-                                    <h4>English</h4>
+                                    <h4>Competitive Exams Coaching</h4>
                                     <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                        The ability to learn faster and efficient may be the only sustainable competitive Advantage. Our courses helps the students to survive in the competitive world.
                                     </p>
                                 </div> 
                             </div>
                             <div class="single-course course-c"> 
                                 <div class="course-picture"></div> 
                                 <div class="course-content">
-                                    <h4>English</h4>
+                                    <h4>SSLC Crash Course</h4>
                                     <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                        This Course allows rapid and intense schedules and method of coaching for SSLC Students.
                                     </p>
                                 </div> 
                             </div>
                             <div class="single-course course-d"> 
                                 <div class="course-picture"></div> 
                                 <div class="course-content">
-                                    <h4>English</h4>
+                                    <h4>Basic Reading & Writing</h4>
                                     <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                        An Extremely Super Designed Educational Plan that helps Students to Learn the Basics easily as ever.
                                     </p>
                                 </div> 
                             </div>
@@ -287,30 +286,30 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="courses">
-                        <div class="single-course course-a"> 
+                        <div class="single-course course-a one"> 
                             <div class="course-picture"></div> 
                             <div class="course-content">
-                                <h4>English</h4>
+                                <h4>Advanced Reading & Writing</h4>
                                 <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    Taking our Students to next Level of Reading and Writing.
                                 </p>
                             </div> 
                         </div>
-                        <div class="single-course course-b"> 
+                        <div class="single-course course-b two"> 
                             <div class="course-picture"></div> 
                             <div class="course-content">
-                                <h4>English</h4>
+                                <h4>Foundation Course</h4>
                                 <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    It will help you attain the correct level of qualifications and skills to pursue a basic level of a particular subject.
                                 </p>
                             </div> 
                         </div>
-                        <div class="single-course course-c"> 
+                        <div class="single-course course-c three"> 
                             <div class="course-picture"></div> 
                             <div class="course-content">
-                                <h4>English</h4>
+                                <h4>Academic Training</h4>
                                 <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates expedita assumenda veritatis corrupti dolorum, laboriosam ipsum quos eaque odit! Enim sapiente consectetur ab tempore quisquam.
+                                    We Provides Individual Care for Students from KG to Plus Two.
                                 </p>
                             </div> 
                         </div>
@@ -340,7 +339,7 @@
             <div class="main-image-card">
                 <div class="image"></div>
                 <div class="image-details">
-                    <h4>Aleena</h4>
+                    <h4>Steven</h4>
                     <p>7th iohs edavanna</p>
                 </div>
             </div>
@@ -380,40 +379,40 @@
         <div class="teams-wrapper">
 
             <div class="member-card">
-                <div class="image"></div>
+                <div class="image first"></div>
 
                 <p class="description">
-                    Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel
+                    We are disrupting the norms of education
                 </p>
 
                 <span class="member-card-inline-divider"></span>
 
                 <h4 class="member-name">John Doe</h4>
-                <p class="member-position">Ceo at Homework</p>
+                <p class="member-position">CEO at Homework</p>
             </div>
             <div class="member-card">
-                <div class="image"></div>
+                <div class="image second"></div>
 
                 <p class="description">
-                    Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel
+                    Be limitless, Be you
                 </p>
 
                 <span class="member-card-inline-divider"></span>
 
                 <h4 class="member-name">John Doe</h4>
-                <p class="member-position">Ceo at Homework</p>
+                <p class="member-position">COO at Homework</p>
             </div>
             <div class="member-card">
-                <div class="image"></div>
+                <div class="image third"></div>
 
                 <p class="description">
-                    Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel
+                    No investment in education is ever wasted
                 </p>
 
                 <span class="member-card-inline-divider"></span>
 
                 <h4 class="member-name">John Doe</h4>
-                <p class="member-position">Ceo at Homework</p>
+                <p class="member-position">MD at Homework</p>
             </div>
 
         </div>
@@ -517,7 +516,7 @@
         <div class="second-row">
 
             <p>
-                &copy; homeworkhometutors. All rights reserved. Created and maintained by &nbsp;<a href="https://narrowtech.in/">Narrowtech.in</a>
+                &copy; homeworkhometutors. All rights reserved. Created and maintained by &nbsp;<a href="https://narrowtech.in/" target="_blank">Narrowtech.in</a>
             </p>
 
         </div>

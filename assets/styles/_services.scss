@@ -74,14 +74,39 @@
             border-color: $secondary-blue;
         }
     }
-    .course-a, .course-c {
+    .course-a {
         .course-picture  {
-            background-image: url('../images/personone.jpg');
+            background-image: url('../images/course1.webp');
         }
     }
-    .course-b, .course-d {
+    .course-b {
         .course-picture  {
-            background-image: url('../images/kid.jpg');
+            background-image: url('../images/course2.webp');
+        }
+    }
+    .course-c {
+        .course-picture  {
+            background-image: url('../images/course3.webp');
+        }
+    }
+    .course-d {
+        .course-picture  {
+            background-image: url('../images/course4.webp');
+        }
+    }
+    .one {
+        .course-picture  {
+            background-image: url('../images/course5.webp');
+        }
+    }
+    .two {
+        .course-picture  {
+            background-image: url('../images/course6.webp');
+        }
+    }
+    .three {
+        .course-picture  {
+            background-image: url('../images/course7.webp');
         }
     }
     .course-a { grid-area: 1 / 1 / 2 / 2; }

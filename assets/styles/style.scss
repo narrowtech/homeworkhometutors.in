@@ -87,6 +87,9 @@ a.active {
     border: none;
     margin-top: 1rem;
 }
+.form-submit-button:disabled {
+    opacity: 0.5;
+}
 .upload-row {
     align-self: flex-start;
     display: flex;
@@ -127,6 +130,35 @@ a.active {
     }
 }
 
+/* Toast */
+.toast {
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #a8d4ff;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    h3 {
+        color: $footer-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .toast-close-btn {
+        margin: 0.4rem 0 0 4rem;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        img {
+            width: 1.4rem;
+        }
+    }
+}
 /** Modal */
 .modal {
     z-index: 800;
@@ -268,6 +300,30 @@ a.active {
   .is-visible {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #3498db;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  .void {
+      display: none;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
 @import "home";

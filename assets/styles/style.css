@@ -87,6 +87,10 @@ a.active::after {
   margin-top: 1rem;
 }
 
+.form-submit-button:disabled {
+  opacity: 0.5;
+}
+
 .upload-row {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -143,6 +147,43 @@ a.active::after {
   .teams-section {
     padding: 7rem 8%;
   }
+}
+
+/* Toast */
+.toast {
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #a8d4ff;
+  padding: 2rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.5rem;
+}
+
+.toast h3 {
+  color: #093F74;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.toast .toast-close-btn {
+  margin: 0.4rem 0 0 4rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.toast .toast-close-btn img {
+  width: 1.4rem;
 }
 
 /** Modal */
@@ -320,6 +361,42 @@ a.active::after {
 .is-visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+.loader {
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.void {
+  display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 nav {
@@ -945,12 +1022,32 @@ nav ul li {
   border-color: #0061B2;
 }
 
-.services-section .course-a .course-picture, .services-section .course-c .course-picture {
-  background-image: url("../images/personone.jpg");
+.services-section .course-a .course-picture {
+  background-image: url("../images/course1.webp");
 }
 
-.services-section .course-b .course-picture, .services-section .course-d .course-picture {
-  background-image: url("../images/kid.jpg");
+.services-section .course-b .course-picture {
+  background-image: url("../images/course2.webp");
+}
+
+.services-section .course-c .course-picture {
+  background-image: url("../images/course3.webp");
+}
+
+.services-section .course-d .course-picture {
+  background-image: url("../images/course4.webp");
+}
+
+.services-section .one .course-picture {
+  background-image: url("../images/course5.webp");
+}
+
+.services-section .two .course-picture {
+  background-image: url("../images/course6.webp");
+}
+
+.services-section .three .course-picture {
+  background-image: url("../images/course7.webp");
 }
 
 .services-section .course-a {
@@ -1117,7 +1214,7 @@ nav ul li {
   width: 38rem;
   height: 38rem;
   border-radius: 2rem;
-  background: url("../images/personone.jpg") no-repeat;
+  background: url("../images/hero.webp") no-repeat;
   background-size: cover;
 }
 
@@ -1316,7 +1413,22 @@ nav ul li {
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
-  background: url("../images/personone.jpg") no-repeat;
+}
+
+.teams-section .teams-wrapper .member-card .image.first {
+  background: url("../images/ceo.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.teams-section .teams-wrapper .member-card .image.second {
+  background: url("../images/coo.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.teams-section .teams-wrapper .member-card .image.third {
+  border: 1px solid #E8E8E8;
   background-size: cover;
   background-position: center;
 }
@@ -1658,7 +1770,7 @@ footer .second-row p {
 }
 
 footer .second-row a {
-  color: #6f7f9e;
+  color: #ffffff;
   font-size: 1.1rem;
   text-decoration: none;
   font-weight: 600;
