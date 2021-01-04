@@ -76,8 +76,8 @@ closeIcon.addEventListener("click", () => {
     navLinks.classList.toggle("open");
 });
 //http://localhost:3000
-const Url = 'https://homeworkhometutors.in/student';
-const Url2 = 'https://homeworkhometutors.in/teacher';
+const Url = 'https://https://homework-hometutors-mailer.herokuapp.com/student';
+const Url2 = 'https://https://homework-hometutors-mailer.herokuapp.com/teacher';
 
 function submitStudent(e) {
 	e.preventDefault();
