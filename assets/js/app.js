@@ -254,6 +254,7 @@ function submitTeacher(e) {
 		// headers: {
 		// 	"Content-Type": "multipart/form-data",
 		// },
+		mode: "no-cors",
 		body: formData,
 		method: "POST"
 	}
