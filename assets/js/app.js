@@ -252,6 +252,7 @@ function submitTeacher(e) {
 
 	const Params = {
 		headers: {
+			"Content-Type": "multipart/form-data",
 			"Content-Length": 10000000 
 		},
 		body: formData,
