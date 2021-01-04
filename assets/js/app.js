@@ -8,11 +8,11 @@ const links = document.querySelector('.nav-links li');
 const paras = document.querySelector('.single-course p');
 const fileName = document.querySelector('.uploaded-file-name');
 
-function processSelectedFile(fileInput) {
-    var files = fileInput.files;
+// function processSelectedFile(fileInput) {
+//     var files = fileInput.files;
     
-    fileName.textContent = files[0].name;
-  }
+//     fileName.textContent = files[0].name;
+//   }
 
 document.querySelectorAll('.call-pop').forEach(element => {
     element.addEventListener('click', function() {
@@ -88,6 +88,7 @@ function submitStudent(e) {
 	let district = document.forms["studForm"]["district"];
 	let frm = document.getElementsByName('studForm')[0];
 	let phoneno = /^\d{10}$/;
+	var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 	if (name.value == "") { 
 		window.alert("Please enter your name."); 
@@ -96,6 +97,12 @@ function submitStudent(e) {
 	} 
 
 	if (email.value == "") { 
+		window.alert( 
+		  "Please enter e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+	if (!email.value.match(mailformat)) { 
 		window.alert( 
 		  "Please enter a valid e-mail address."); 
 		email.focus(); 
@@ -169,14 +176,14 @@ function submitStudent(e) {
 
 function submitTeacher(e) {
 	e.preventDefault();
-	document.getElementById('loader2').classList.remove('void');
-	document.getElementById('texter2').classList.add('void');
 	let name = document.forms["techForm"]["name"]; 
 	let email = document.forms["techForm"]["email"]; 
 	let phone = document.forms["techForm"]["phone"]; 
 	let qualification = document.forms["techForm"]["qualification"]; 
 	let address = document.forms["techForm"]["address"];
 	var frm = document.getElementsByName('techForm')[0];
+	let phoneno = /^\d{10}$/;
+	var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 	if (name.value == "") { 
 		window.alert("Please enter your name."); 
@@ -190,13 +197,25 @@ function submitTeacher(e) {
 		email.focus(); 
 		return false; 
 	} 
+	if (!email.value.match(mailformat)) { 
+		window.alert( 
+		  "Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
 
 	if (phone.value == "") { 
 		window.alert( 
 		  "Please enter your telephone number."); 
 		phone.focus(); 
 		return false; 
-	} 
+	}
+	if(!phone.value.match(phoneno)) {
+        window.alert( 
+			"Please enter a valid number."); 
+		phone.focus(); 
+		return false; 
+    }
 
 	if (qualification.value == "") { 
 		alert("Please enter your qualification."); 
@@ -208,24 +227,34 @@ function submitTeacher(e) {
 		address.focus(); 
 		return false; 
 	}
-	let file = document.getElementById("file-upload").files[0];
+	//let file = document.getElementById("file-upload").files[0];
 
 	document.getElementById('teacher-button').disabled = true;
+	document.getElementById('loader2').classList.remove('void');
+	document.getElementById('texter2').classList.add('void');
 
-	let formData = new FormData();
+	const Data = {
+		name: name.value,
+		email: email.value,
+		phone: phone.value,
+		qualification: qualification.value,
+		address: address.value,
+	}
 
-	formData.append("file", file);
-	formData.append("name", name.value);
-	formData.append("email", email.value);
-	formData.append("phone", phone.value);
-	formData.append("qualification", qualification.value);
-	formData.append("address", address.value);
+	//let formData = new FormData();
+
+	// formData.append("file", file);
+	// formData.append("name", name.value);
+	// formData.append("email", email.value);
+	// formData.append("phone", phone.value);
+	// formData.append("qualification", qualification.value);
+	// formData.append("address", address.value);
 
 	const Params = {
 		headers: {
-			"content-type": "multipart/form-data;"
+			"content-type": "application/json"
 		},
-		body: formData,
+		body: JSON.stringify(Data),
 		method: "POST"
 	}
 
