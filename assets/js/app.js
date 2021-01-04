@@ -251,10 +251,9 @@ function submitTeacher(e) {
 	formData.append("address", address.value);
 
 	const Params = {
-		headers: {
-			"Content-Type": "multipart/form-data",
-			"Content-Length": 10000000 
-		},
+		// headers: {
+		// 	"Content-Type": "multipart/form-data",
+		// },
 		body: formData,
 		method: "POST"
 	}
