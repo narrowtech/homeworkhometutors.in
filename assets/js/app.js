@@ -251,6 +251,9 @@ function submitTeacher(e) {
 	formData.append("address", address.value);
 
 	const Params = {
+		headers: {
+			"content-length": 10000000 
+		},
 		body: formData,
 		method: "POST"
 	}
