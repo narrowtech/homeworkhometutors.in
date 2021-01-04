@@ -252,7 +252,7 @@ function submitTeacher(e) {
 
 	const Params = {
 		headers: {
-			"content-length": 10000000 
+			"Content-Length": 10000000 
 		},
 		body: formData,
 		method: "POST"
