@@ -75,21 +75,19 @@ hamburger.addEventListener("click", () => {
 closeIcon.addEventListener("click", () => {
     navLinks.classList.toggle("open");
 });
-
-const Url = 'https://homework-hometutors-mailer.herokuapp.com/student';
-const Url2 = 'https://homework-hometutors-mailer.herokuapp.com/teacher';
+//http://localhost:3000
+const Url = 'https://homeworkhometutors.in/student';
+const Url2 = 'https://homeworkhometutors.in/teacher';
 
 function submitStudent(e) {
 	e.preventDefault();
-	document.getElementById('student-button').disabled = true;
-	document.getElementById('loader').classList.remove('void');
-	document.getElementById('texter').classList.add('void');
 	let name = document.forms["studForm"]["name"]; 
-	let email = document.forms["studForm"]["email"]; 
-	let phone = document.forms["studForm"]["phone"]; 
-	let classname = document.forms["studForm"]["class"]; 
+	let email = document.forms["studForm"]["email"];
+	let phone = document.forms["studForm"]["phone"];
+	let classname = document.forms["studForm"]["class"];
 	let district = document.forms["studForm"]["district"];
-	var frm = document.getElementsByName('studForm')[0];
+	let frm = document.getElementsByName('studForm')[0];
+	let phoneno = /^\d{10}$/;
 
 	if (name.value == "") { 
 		window.alert("Please enter your name."); 
@@ -109,7 +107,14 @@ function submitStudent(e) {
 		  "Please enter your telephone number."); 
 		phone.focus(); 
 		return false; 
-	} 
+	}
+
+  	if(!phone.value.match(phoneno)) {
+        window.alert( 
+			"Please enter a valid number."); 
+		phone.focus(); 
+		return false; 
+    }
 
 	if (classname.selectedIndex < 1) { 
 		alert("Please enter your class."); 
@@ -121,6 +126,10 @@ function submitStudent(e) {
 		district.focus(); 
 		return false; 
 	}
+
+	document.getElementById('student-button').disabled = true;
+	document.getElementById('loader').classList.remove('void');
+	document.getElementById('texter').classList.add('void');
 
 	const Data = {
 		name: name.value,
@@ -160,7 +169,6 @@ function submitStudent(e) {
 
 function submitTeacher(e) {
 	e.preventDefault();
-	document.getElementById('teacher-button').disabled = true;
 	document.getElementById('loader2').classList.remove('void');
 	document.getElementById('texter2').classList.add('void');
 	let name = document.forms["techForm"]["name"]; 
@@ -202,6 +210,8 @@ function submitTeacher(e) {
 	}
 	let file = document.getElementById("file-upload").files[0];
 
+	document.getElementById('teacher-button').disabled = true;
+
 	let formData = new FormData();
 
 	formData.append("file", file);
@@ -212,9 +222,9 @@ function submitTeacher(e) {
 	formData.append("address", address.value);
 
 	const Params = {
-		// headers: {
-		// 	"content-type": "multipart/form-data"
-		// },
+		headers: {
+			"content-type": "multipart/form-data; boundary=----WebKitFormBoundaryuUDTGLMQ1Qev8C9R"
+		},
 		body: formData,
 		method: "POST"
 	}
