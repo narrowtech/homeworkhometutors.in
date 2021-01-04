@@ -223,7 +223,7 @@ function submitTeacher(e) {
 
 	const Params = {
 		headers: {
-			"content-type": "multipart/form-data; boundary=----WebKitFormBoundaryuUDTGLMQ1Qev8C9R"
+			"content-type": "multipart/form-data;"
 		},
 		body: formData,
 		method: "POST"
