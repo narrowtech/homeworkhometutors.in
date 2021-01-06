@@ -135,7 +135,7 @@ a.active::after {
 
 @media screen and (max-width: 974px) {
   .about-section, .services-section, .testimonials-section {
-    padding: 0 8%;
+    padding: 0 5%;
   }
 }
 
@@ -463,6 +463,7 @@ nav ul li {
 
 .home-section .home-left-content {
   width: 35%;
+  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 1370px) {
@@ -485,12 +486,6 @@ nav ul li {
   .home-section .home-right-content {
     width: 55%;
     background-position-x: -40%;
-  }
-}
-
-@media screen and (max-width: 870px) {
-  .home-section .home-right-content {
-    display: none;
   }
 }
 
@@ -539,6 +534,21 @@ nav ul li {
 .home-section .slide4 {
   background: url("../images/slide4.webp") no-repeat;
   background-size: cover;
+}
+
+@media screen and (max-width: 870px) {
+  .home-section {
+    width: 95%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .home-section .home-right-content {
+    margin-bottom: 3rem;
+    height: 30rem;
+    width: 100% !important;
+  }
 }
 
 @media screen and (max-width: 974px) {
