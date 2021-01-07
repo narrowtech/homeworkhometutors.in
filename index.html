@@ -381,6 +381,62 @@
     
         <div class="teams-wrapper">
 
+            <div class="teams-swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide0">
+                        <div class="member-card">
+                            <div class="image first"></div>
+            
+                            <p class="description">
+                                We are disrupting the norms of education
+                            </p>
+            
+                            <span class="member-card-inline-divider"></span>
+            
+                            <h4 class="member-name">John Doe</h4>
+                            <p class="member-position">CEO at Homework</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide1">
+                        <div class="member-card">
+                            <div class="image second"></div>
+            
+                            <p class="description">
+                                Be limitless, Be you
+                            </p>
+            
+                            <span class="member-card-inline-divider"></span>
+            
+                            <h4 class="member-name">John Doe</h4>
+                            <p class="member-position">COO at Homework</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <div class="member-card">
+                            <div class="image third"></div>
+            
+                            <p class="description">
+                                No investment in education is ever wasted
+                            </p>
+            
+                            <span class="member-card-inline-divider"></span>
+            
+                            <h4 class="member-name">John Doe</h4>
+                            <p class="member-position">MD at Homework</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="teams-swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <!-- <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+            </div>
+
+        </div>
+
+        <div class="teams-wrapper1">
             <div class="member-card">
                 <div class="image first"></div>
 
@@ -417,7 +473,6 @@
                 <h4 class="member-name">John Doe</h4>
                 <p class="member-position">MD at Homework</p>
             </div>
-
         </div>
 
     </section>
@@ -561,6 +616,23 @@
         navigation: {
             nextEl: '.service-swiper-button-next',
             prevEl: '.service-swiper-button-prev',
+        },
+        });
+
+        var swiper = new Swiper('.teams-swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.teams-swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.teams-swiper-button-next',
+            prevEl: '.teams-swiper-button-prev',
         },
         });
         </script>

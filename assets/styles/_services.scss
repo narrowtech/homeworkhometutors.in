@@ -123,6 +123,9 @@
     }
 
     @media screen and (max-width: 692px) {
+        .service-swiper-container {
+            margin-bottom: 3rem !important;
+        }
         .courses {
             margin: 4rem 0rem;
             grid-template-columns: 1fr;
