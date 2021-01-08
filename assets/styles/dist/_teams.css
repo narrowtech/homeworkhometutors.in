@@ -1,0 +1,106 @@
+.teams-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8FCFD;
+}
+.teams-section .teams-swiper-container {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.teams-section .teams-swiper-container .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+}
+.teams-section .teams-wrapper, .teams-section .teams-wrapper1 {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.teams-section .teams-wrapper .member-card, .teams-section .teams-wrapper1 .member-card {
+  width: 39rem;
+  height: 48rem;
+  margin: 0 4rem;
+  border-radius: 2rem;
+  border: 1px solid #E8E8E8;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 6rem;
+}
+.teams-section .teams-wrapper .member-card .image, .teams-section .teams-wrapper1 .member-card .image {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+}
+.teams-section .teams-wrapper .member-card .image.first, .teams-section .teams-wrapper1 .member-card .image.first {
+  background: url("../images/ceo.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.teams-section .teams-wrapper .member-card .image.second, .teams-section .teams-wrapper1 .member-card .image.second {
+  background: url("../images/coo.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.teams-section .teams-wrapper .member-card .image.third, .teams-section .teams-wrapper1 .member-card .image.third {
+  border: 1px solid #E8E8E8;
+  background-size: cover;
+  background-position: center;
+}
+.teams-section .teams-wrapper .member-card .description, .teams-section .teams-wrapper1 .member-card .description {
+  margin: 1rem 0rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.teams-section .teams-wrapper .member-card .member-card-inline-divider, .teams-section .teams-wrapper1 .member-card .member-card-inline-divider {
+  margin: 2.8rem 0rem;
+  height: 0.3rem;
+  width: 9.4rem;
+  background-color: #9FE670;
+}
+.teams-section .teams-wrapper .member-card .member-position, .teams-section .teams-wrapper1 .member-card .member-position {
+  text-align: center;
+  margin-top: 1rem;
+}
+.teams-section .teams-wrapper .member-card:hover, .teams-section .teams-wrapper1 .member-card:hover {
+  box-shadow: 14px 27px 80px rgba(0, 0, 0, 0.09);
+}
+.teams-section .teams-wrapper {
+  display: none;
+}
+
+@media screen and (max-width: 930px) {
+  .teams-wrapper {
+    display: block !important;
+  }
+  .teams-wrapper .member-card {
+    margin: 2rem 0rem !important;
+  }
+
+  .teams-wrapper1 {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .member-card {
+    width: 30rem !important;
+    height: 48rem;
+  }
+}

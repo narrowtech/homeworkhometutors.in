@@ -41,8 +41,9 @@
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 5rem 6rem;
+            padding: 5rem 4rem;
             .image {
                 width: 12rem;
                 height: 12rem;
@@ -75,6 +76,7 @@
                 background-color: #9FE670;
             }
             .member-position {
+                text-align: center;
                 margin-top: 1rem;
             }
             &:hover {
