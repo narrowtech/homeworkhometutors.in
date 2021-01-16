@@ -41,8 +41,9 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 5rem 6rem;
+  padding: 5rem 4rem;
 }
 .teams-section .teams-wrapper .member-card .image, .teams-section .teams-wrapper1 .member-card .image {
   width: 12rem;
@@ -60,9 +61,9 @@
   background-position: center;
 }
 .teams-section .teams-wrapper .member-card .image.third, .teams-section .teams-wrapper1 .member-card .image.third {
-  border: 1px solid #E8E8E8;
+  background: url("../images/md.jpeg") no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 .teams-section .teams-wrapper .member-card .description, .teams-section .teams-wrapper1 .member-card .description {
   margin: 1rem 0rem;

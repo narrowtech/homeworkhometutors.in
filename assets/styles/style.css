@@ -1468,7 +1468,7 @@ nav ul li {
 .teams-section .teams-wrapper .member-card .image.third, .teams-section .teams-wrapper1 .member-card .image.third {
   background: url("../images/md.jpeg") no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 
 .teams-section .teams-wrapper .member-card .description, .teams-section .teams-wrapper1 .member-card .description {
