@@ -252,6 +252,25 @@ a.active::after {
   max-width: 100%;
   resize: none;
 }
+.modal .tab-content form .location-button {
+  display: flex;
+  justify-content: space-around;
+  align-self: flex-start;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #d1d1d1;
+  color: #707070;
+  padding: 1.5rem 3.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(165, 165, 165, 0.27);
+  font-size: 1.5rem;
+  margin: 0.6rem 0;
+  width: 22rem !important;
+}
+.modal .tab-content form .location-button .fa-map-marker-alt {
+  margin-right: 0.4rem;
+}
 .modal .tab-content > .tab-pane {
   display: none;
 }
@@ -1047,9 +1066,9 @@ nav ul li {
   background-position: center;
 }
 .teams-section .teams-wrapper .member-card .image.third, .teams-section .teams-wrapper1 .member-card .image.third {
-  background: url("../images/md.jpeg") no-repeat;
+  background: url("../images/md.jpg") no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 .teams-section .teams-wrapper .member-card .description, .teams-section .teams-wrapper1 .member-card .description {
   margin: 1rem 0rem;

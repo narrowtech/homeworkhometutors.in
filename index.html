@@ -36,6 +36,7 @@
 
                 <form name="studForm" action="https://formsubmit.co/hr@homeworkhometutors.in" method="POST" >
                     <input type="hidden" name="_captcha" value="false">
+                    <input class="form-field" style="display: none;" type="text" name="Type" placeholder="TYPE" value="Students's Form" />
 
                     <input class="form-field" type="text" name="name" placeholder="Full Name" />
 
@@ -59,23 +60,12 @@
                         <option value="12">12</option>
                     </select>
 
-                    <select class="form-field" name="district" id="">
-                        <option value="null" selected="selected" disabled>Select District</option>
-                        <option value="thiruvananthapuram">Thiruvananthapuram</option>
-                        <option value="kollam">Kollam</option>
-                        <option value="pathanamthitta">Pathanamthitta</option>
-                        <option value="alappuzha">Alappuzha</option>
-                        <option value="kottayam">Kottayam</option>
-                        <option value="idukki">Idukki</option>
-                        <option value="ernakulam">Ernakulam</option>
-                        <option value="thrissur">Thrissur</option>
-                        <option value="palakkad">Palakkad</option>
-                        <option value="malappuram">Malappuram</option>
-                        <option value="kozhikode">Kozhikode</option>
-                        <option value="Wayanad">Wayanad</option>
-                        <option value="Kannur">Kannur</option>
-                        <option value="Kasaragod">Kasaragod</option>
-                    </select>
+                    <textarea name="address" class="form-field address-field student-address" placeholder="Address" rows="6"></textarea>
+
+                    <button class="location-button" onclick="getLocation2(event)" id="student-location">
+                        <div id="loader4" class="loader void"></div>
+                        <p id="texter4"><i class="fas fa-map-marker-alt"></i> Get Current Location</p>
+                    </button>
 
                     <button class="form-submit-button" id="student-button" type="submit"> 
                         <div id="loader" class="loader void"></div>
@@ -88,9 +78,10 @@
 			</div> 
 			<div id="tab-2" class="tab-pane">
                 <!-- onsubmit="return submitTeacher(event)" -->
+                <!-- hr@homeworkhometutors.in -->
                 <form name="techForm" action="https://formsubmit.co/hr@homeworkhometutors.in" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_captcha" value="false">
-
+                    <input class="form-field" style="display: none;" type="text" name="Type" placeholder="TYPE" value="Teacher's Form" />
                     <input class="form-field" type="text" name="name" placeholder="Full Name" />
 
                     <input class="form-field" type="text" name="email" placeholder="Email Address" />
@@ -99,7 +90,12 @@
 
                     <input class="form-field" type="text" name="qualification" placeholder="Qualification" />
 
-                    <textarea name="address" class="form-field address-field" placeholder="Address" rows="6"></textarea>
+                    <textarea name="address" class="form-field address-field teacher-address" placeholder="Address" rows="6"></textarea>
+
+                    <button class="location-button" onclick="getLocation(event)" id="location-button">
+                        <div id="loader3" class="loader void"></div>
+                        <p id="texter3"><i class="fas fa-map-marker-alt"></i> Get Current Location</p>
+                    </button>
 
                     <div class="upload-row">
 

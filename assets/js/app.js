@@ -7,6 +7,8 @@ const navLinks = document.querySelector('.nav-links');
 const links = document.querySelector('.nav-links li');
 const paras = document.querySelector('.single-course p');
 const fileName = document.querySelector('.uploaded-file-name');
+const address = document.querySelector('.teacher-address');
+const saddress = document.querySelector('.student-address');
 
 function processSelectedFile(fileInput) {
     var files = fileInput.files;
@@ -277,4 +279,60 @@ function submitTeacher(e) {
 			document.getElementById('texter2').classList.remove('void');
 			console.log(error) 
 		})
+}
+//https://www.mapquestapi.com/geocoding/v1/reverse?key=KEY&location=1%2C1&outFormat=json&thumbMaps=false
+const getLocation = (e) => {
+	e.preventDefault();
+
+	if (navigator.geolocation) {
+		document.getElementById('location-button').disabled = true;
+		document.getElementById('loader3').classList.remove('void');
+		document.getElementById('texter3').classList.add('void');
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else { 
+		x.innerHTML = "Geolocation is not supported by this browser.";
+	}
+}
+//'https://jsonplaceholder.typicode.com/posts/1'
+function showPosition(position) {
+	let res = {};
+	const data = fetch(`https://www.mapquestapi.com/geocoding/v1/reverse?key=gLhWAWj0r9MjYC6XLfzD2UqtvOaduCuF&location=${position.coords.latitude}%2C${position.coords.longitude}&outFormat=json&thumbMaps=false`)
+    .then(response => {return response.json()})
+    .then(json => {
+		//console.log(json);
+		res = json;
+		address.value = `${res.results[0].locations[0].street}, ${res.results[0].locations[0].adminArea5}, ${res.results[0].locations[0].adminArea3}, ${res.results[0].locations[0].postalCode}`
+		//console.log(res);
+		document.getElementById('location-button').disabled = false;
+		document.getElementById('loader3').classList.add('void');
+		document.getElementById('texter3').classList.remove('void');
+	});
+}
+
+const getLocation2 = (e) => {
+	e.preventDefault();
+
+	if (navigator.geolocation) {
+		document.getElementById('student-location').disabled = true;
+		document.getElementById('loader4').classList.remove('void');
+		document.getElementById('texter4').classList.add('void');
+		navigator.geolocation.getCurrentPosition(showPosition2);
+	} else { 
+		x.innerHTML = "Geolocation is not supported by this browser.";
+	}
+}
+//'https://jsonplaceholder.typicode.com/posts/1'
+function showPosition2(position) {
+	let res = {};
+	const data = fetch(`https://www.mapquestapi.com/geocoding/v1/reverse?key=gLhWAWj0r9MjYC6XLfzD2UqtvOaduCuF&location=${position.coords.latitude}%2C${position.coords.longitude}&outFormat=json&thumbMaps=false`)
+    .then(response => {return response.json()})
+    .then(json => {
+		//console.log(json);
+		res = json;
+		saddress.value = `${res.results[0].locations[0].street}, ${res.results[0].locations[0].adminArea5}, ${res.results[0].locations[0].adminArea3}, ${res.results[0].locations[0].postalCode}`
+		//console.log(res);
+		document.getElementById('student-location').disabled = false;
+		document.getElementById('loader4').classList.add('void');
+		document.getElementById('texter4').classList.remove('void');
+	});
 }
