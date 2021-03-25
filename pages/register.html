@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="ico" href="../assets/images/head.ico"/>
+
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <title>Home Work Home Tutors | Register</title>
+</head>
+<body>
+
+        <!-- ?============================================ -->
+    <!-- ?================= Nav Bar ================= -->
+    <!-- ?========================================== -->
+    <nav>
+
+        <img class="company_logo" src="../assets/images/logo_icon.svg" alt="logo">
+
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul id="whole-nav" class="nav-links">
+
+            <img src="./assets/images/close-icon.png" class="close-icon" alt="close">
+
+            <li class="nav-link"> <a href="../index.html">Home</a> </li>
+            <li class="nav-link"> <a href="./about.html">About Us</a> </li>
+            <li class="nav-link"> <a href="./services.html">Services</a> </li>
+            <li class="nav-link"> <a href="./testimonials.html">Testimonials</a> </li>
+            <li class="nav-link"> <a href="./contact.html">Contact Us</a> </li>
+            <li class="nav-link"> <a href="./register.html" class="common-button call-pop">Register</a> </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="modal" id="modal">
+        <div class="form-header">
+            <h3>Fill Form</h3>
+        </div>
+        
+        <ul class="nav nav-tabs">
+			<li class="tab-links active"><a href="#tab-1">Students</a></li>
+			<li class="tab-links"><a href="#tab-2">Teachers</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="tab-1" class="tab-pane active">
+
+                <form name="studForm" action="https://formsubmit.co/hr@homeworkhometutors.in" method="POST" >
+                    <input type="hidden" name="_captcha" value="false">
+                    <input class="form-field" style="display: none;" type="text" name="Type" placeholder="TYPE" value="Students's Form" />
+
+                    <input class="form-field" type="text" name="name" placeholder="Full Name" />
+
+                    <input class="form-field" type="text" name="email" placeholder="Email Address" />
+    
+                    <input class="form-field" type="number" name="phone" placeholder="Phone Number" />
+
+                    <select class="form-field" name="class" id="">
+                        <option value="null" selected="selected" disabled>Select Class</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+
+                    <textarea name="address" class="form-field address-field student-address" placeholder="Address" rows="6"></textarea>
+
+                    <button class="location-button" onclick="getLocation2(event)" id="student-location">
+                        <div id="loader4" class="loader void"></div>
+                        <p id="texter4"><i class="fas fa-map-marker-alt"></i> Get Current Location</p>
+                    </button>
+
+                    <button class="form-submit-button" id="student-button" type="submit"> 
+                        <div id="loader" class="loader void"></div>
+                        <p id="texter" style="color: #fff;">Submit</p>
+                    </button>
+                    
+
+                </form>
+
+			</div> 
+			<div id="tab-2" class="tab-pane">
+                <form name="techForm" action="https://formsubmit.co/hr@homeworkhometutors.in" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input class="form-field" style="display: none;" type="text" name="Type" placeholder="TYPE" value="Teacher's Form" />
+                    <input class="form-field" type="text" name="name" placeholder="Full Name" />
+
+                    <input class="form-field" type="text" name="email" placeholder="Email Address" />
+    
+                    <input class="form-field" type="number" name="phone" placeholder="Phone Number" />
+
+                    <input class="form-field" type="text" name="qualification" placeholder="Qualification" />
+
+                    <textarea name="address" class="form-field address-field teacher-address" placeholder="Address" rows="6"></textarea>
+
+                    <button class="location-button" onclick="getLocation(event)" id="location-button">
+                        <div id="loader3" class="loader void"></div>
+                        <p id="texter3"><i class="fas fa-map-marker-alt"></i> Get Current Location</p>
+                    </button>
+
+                    <div class="upload-row">
+
+                        <label class="file-upload-button" for="file-upload">
+                            Upload Your Resume
+                        </label>
+                        <p class="uploaded-file-name">
+                            
+                        </p>
+
+                    </div>
+                    <input style="display: none;" type="file" name="resume" id="file-upload" class="form-field" onchange="processSelectedFile(this)" />
+
+                    <button class="form-submit-button" id="teacher-button" type="submit">
+                        <div id="loader2" class="loader void"></div>
+                        <p id="texter2" style="color: #fff;">Submit</p>
+                    </button>
+
+                </form>
+
+			</div>
+		</div>
+    </div>
+    <div class="toast" id="toast">
+        <h3>Form successfully sent</h3>
+        <button class="toast-close-btn" id="toast-close-btn">
+            <img src="./assets/images/close-icon.png" alt="close">
+        </button>
+    </div>
+
+    <footer>
+        
+        <div class="first-row">
+
+            <img class="footer-logo" src="../assets/images/logo_white.png" alt="logo">
+
+            <div class="column quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="http://">Careers</a></li>
+                    <li><a href="http://">Become a Trainer</a></li>
+                    <li><a href="http://">Give Feedback</a></li>
+                    <li><a href="http://">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div class="column features">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="http://">Best Teachers</a></li>
+                    <li><a href="http://">Adaptive Teaching</a></li>
+                    <li><a href="http://">Convenient & Sale</a></li>
+                    <li><a href="http://">LIVE & Interactive</a></li>
+                </ul>
+            </div>
+    
+            <div class="column resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="http://">Study Materials</a></li>
+                    <li><a href="http://">Question Papers</a></li>
+                    <li><a href="http://">Take Quiz</a></li>
+                    <li><a href="http://">Downloads</a></li>
+                </ul>
+            </div>
+    
+            <div class="column quick-links">
+                <h3>Top Products</h3>
+                <ul>
+                    <li><a href="http://">Foundation Course</a></li>
+                    <li><a href="http://">Spoken English</a></li>
+                    <li><a href="http://">+1 / +2 Crash Courses</a></li>
+                    <li><a href="http://">JEE / NEET Courses</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="second-row">
+
+            <p>
+                &copy; homeworkhometutors. All rights reserved. Created and maintained by &nbsp;<a href="https://narrowtech.in/" target="_blank">Narrowtech.in</a>
+            </p>
+
+        </div>
+        
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

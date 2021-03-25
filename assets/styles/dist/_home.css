@@ -1,0 +1,178 @@
+nav {
+  width: 80%;
+  margin: auto;
+}
+
+nav {
+  min-height: 10vh;
+  padding: 3rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+nav .close-icon {
+  display: none;
+}
+nav .company_logo {
+  width: 100px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+nav ul li {
+  padding: 1rem 2rem;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0rem 0rem 0rem auto;
+  padding-bottom: 3rem;
+}
+.home-section .hero-text {
+  color: #135592;
+}
+.home-section h3 {
+  margin: 2.5rem 0rem 5rem 0rem;
+  max-width: 44.5rem;
+}
+.home-section .home-left-content {
+  width: 35%;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 1370px) {
+  .home-section .home-left-content {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 870px) {
+  .home-section .home-left-content {
+    width: 100%;
+  }
+}
+.home-section .home-right-content {
+  width: 65%;
+}
+@media screen and (max-width: 1370px) {
+  .home-section .home-right-content {
+    width: 55%;
+    background-position-x: -40%;
+  }
+}
+.home-section .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.home-section .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.home-section .slide0 {
+  background: url("../images/heroTablet.svg") no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+}
+.home-section .slide1 {
+  background: url("../images/slide1.webp") no-repeat;
+  background-size: cover;
+}
+.home-section .slide2 {
+  background: url("../images/slide2.webp") no-repeat;
+  background-size: cover;
+}
+.home-section .slide3 {
+  background: url("../images/slide3.webp") no-repeat;
+  background-size: cover;
+}
+.home-section .slide4 {
+  background: url("../images/slide4.webp") no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 870px) {
+  .home-section {
+    width: 95%;
+    flex-direction: column-reverse;
+  }
+  .home-section .home-right-content {
+    margin-bottom: 3rem;
+    height: 30rem;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 974px) {
+  nav {
+    width: 85%;
+  }
+
+  nav ul li {
+    padding: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    padding: 3rem 4rem;
+  }
+
+  .hamburger {
+    cursor: pointer;
+  }
+
+  .line {
+    width: 3rem;
+    height: 0.3rem;
+    margin: 0.5rem;
+    background-color: #333333;
+  }
+
+  nav ul {
+    z-index: 200;
+    position: relative;
+    padding: 2rem 0rem;
+    border-radius: 1rem;
+    position: fixed;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 19px rgba(0, 0, 0, 0.16);
+    min-height: 100px;
+    min-width: 300px;
+    margin-right: 4rem;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(100px at 110% -30%);
+    transition: all 500ms ease-in-out;
+  }
+  nav ul li {
+    margin-bottom: 1.5rem;
+  }
+  nav ul .close-icon {
+    cursor: pointer;
+    width: 16px;
+    transform: translateX(-100%) translateY(100%);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  nav ul.open {
+    clip-path: circle(58rem at 110% -30%);
+  }
+}

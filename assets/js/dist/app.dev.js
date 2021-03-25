@@ -1,8 +1,8 @@
 "use strict";
 
-var scroll = new SmoothScroll('nav a[href*="#"]', {
-  speed: 800
-});
+// const scroll = new SmoothScroll('nav a[href*="#"]', {
+//     speed: 800
+// });
 var hamburger = document.querySelector('.hamburger');
 var closeIcon = document.querySelector('.close-icon');
 var navLinks = document.querySelector('.nav-links');
@@ -11,29 +11,39 @@ var paras = document.querySelector('.single-course p');
 var fileName = document.querySelector('.uploaded-file-name');
 var address = document.querySelector('.teacher-address');
 var saddress = document.querySelector('.student-address');
+var allNav = document.getElementById("whole-nav");
+var linksnew = allNav.getElementsByClassName("nav-link");
+
+for (var i = 0; i < linksnew.length; i++) {
+  linksnew[i].addEventListener("click", function () {
+    var current = document.getElementsByClassName("new-active");
+    current[0].className = current[0].className.replace(" new-active", "");
+    this.className += " new-active";
+  });
+}
 
 function processSelectedFile(fileInput) {
   var files = fileInput.files;
   fileName.textContent = files[0].name;
-}
+} // document.querySelectorAll('.call-pop').forEach(element => {
+//     element.addEventListener('click', function() {
+//         document.getElementById('overlay').classList.add('is-visible');
+//         document.getElementById('modal').classList.add('is-visible');
+//     });
+// });
+// document.getElementById('close-btn').addEventListener('click', function() {
+//     document.getElementById('overlay').classList.remove('is-visible');
+//     document.getElementById('modal').classList.remove('is-visible');
+// });
+// document.getElementById('overlay').addEventListener('click', function() {
+//     document.getElementById('overlay').classList.remove('is-visible');
+//     document.getElementById('modal').classList.remove('is-visible');
+// });
+// document.getElementById('toast-close-btn').addEventListener('click', function() {
+//     document.getElementById('toast').classList.remove('is-visible');
+// });
 
-document.querySelectorAll('.call-pop').forEach(function (element) {
-  element.addEventListener('click', function () {
-    document.getElementById('overlay').classList.add('is-visible');
-    document.getElementById('modal').classList.add('is-visible');
-  });
-});
-document.getElementById('close-btn').addEventListener('click', function () {
-  document.getElementById('overlay').classList.remove('is-visible');
-  document.getElementById('modal').classList.remove('is-visible');
-});
-document.getElementById('overlay').addEventListener('click', function () {
-  document.getElementById('overlay').classList.remove('is-visible');
-  document.getElementById('modal').classList.remove('is-visible');
-});
-document.getElementById('toast-close-btn').addEventListener('click', function () {
-  document.getElementById('toast').classList.remove('is-visible');
-});
+
 window.addEventListener("load", function () {
   // store tabs variable
   var myTabs = document.querySelectorAll("ul.nav-tabs > li");
