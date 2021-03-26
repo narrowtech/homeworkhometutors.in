@@ -476,6 +476,10 @@ nav ul li {
   color: #135592;
 }
 
+.home-section h1 {
+  margin-bottom: 3rem;
+}
+
 .home-section h3 {
   margin: 2.5rem 0rem 5rem 0rem;
   max-width: 44.5rem;
