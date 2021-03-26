@@ -256,5 +256,58 @@
     </footer>
 
     <script src="../assets/js/app.js"></script>
+
+        	<!-- Swiper JS -->
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
+
+        var swiper = new Swiper('.service-swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            el: '.service-swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.service-swiper-button-next',
+            prevEl: '.service-swiper-button-prev',
+        },
+        });
+
+        var swiper = new Swiper('.teams-swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.teams-swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.teams-swiper-button-next',
+            prevEl: '.teams-swiper-button-prev',
+        },
+        });
+        </script>
 </body>
 </html>
